@@ -1,0 +1,561 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * relacion_antenas_a4
+ *
+ * @ORM\Table(name="relacion_antenas_a4")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\relacion_antenas_a4Repository")
+ */
+class relacion_antenas_a4
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="anexo4_arrendamiento_espacios")
+     * @ORM\JoinColumn(name="id_anexo", referencedColumnName="id", nullable=false)
+     */
+    private $anexo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modelo", type="string", length=50)
+     */
+    private $modelo;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ganancia_dB", type="float")
+     */
+    private $gananciaDB;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="banda_frecuencia_MHz", type="float")
+     */
+    private $bandaFrecuenciaMHz;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="potencia_RF_entregada_W", type="float")
+     */
+    private $potenciaRFEntregadaW;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="peso_antena_kg", type="float")
+     */
+    private $pesoAntenaKg;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="dimension_marco_soporte", type="float")
+     */
+    private $dimensionMarcoSoporte;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="instalada_columna_A", type="boolean")
+     */
+    private $instaladaColumnaA;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="instalada_columna_B", type="boolean")
+     */
+    private $instaladaColumnaB;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="instalada_columna_C", type="boolean")
+     */
+    private $instaladaColumnaC;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="instalada_columna_D", type="boolean")
+     */
+    private $instaladaColumnaD;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_linea_transmision", type="string", length=50)
+     */
+    private $tipoLineaTransmision;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="diametro_parabola", type="float")
+     */
+    private $diametroParabola;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="largo_eje_direccionalidad_otras", type="float")
+     */
+    private $largoEjeDireccionalidadOtras;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="proyecto_por", type="string", length=255)
+     */
+    private $proyectoPor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instalacion_proyecto_por", type="string", length=255)
+     */
+    private $instalacionProyectoPor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="otras_especificaciones", type="text")
+     */
+    private $otrasEspecificaciones;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set modelo.
+     *
+     * @param string $modelo
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setModelo($modelo)
+    {
+        $this->modelo = $modelo;
+
+        return $this;
+    }
+
+    /**
+     * Get modelo.
+     *
+     * @return string
+     */
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+
+    /**
+     * Set gananciaDB.
+     *
+     * @param float $gananciaDB
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setGananciaDB($gananciaDB)
+    {
+        $this->gananciaDB = $gananciaDB;
+
+        return $this;
+    }
+
+    /**
+     * Get gananciaDB.
+     *
+     * @return float
+     */
+    public function getGananciaDB()
+    {
+        return $this->gananciaDB;
+    }
+
+    /**
+     * Set bandaFrecuenciaMHz.
+     *
+     * @param float $bandaFrecuenciaMHz
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setBandaFrecuenciaMHz($bandaFrecuenciaMHz)
+    {
+        $this->bandaFrecuenciaMHz = $bandaFrecuenciaMHz;
+
+        return $this;
+    }
+
+    /**
+     * Get bandaFrecuenciaMHz.
+     *
+     * @return float
+     */
+    public function getBandaFrecuenciaMHz()
+    {
+        return $this->bandaFrecuenciaMHz;
+    }
+
+    /**
+     * Set potenciaRFEntregadaW.
+     *
+     * @param float $potenciaRFEntregadaW
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setPotenciaRFEntregadaW($potenciaRFEntregadaW)
+    {
+        $this->potenciaRFEntregadaW = $potenciaRFEntregadaW;
+
+        return $this;
+    }
+
+    /**
+     * Get potenciaRFEntregadaW.
+     *
+     * @return float
+     */
+    public function getPotenciaRFEntregadaW()
+    {
+        return $this->potenciaRFEntregadaW;
+    }
+
+    /**
+     * Set pesoAntenaKg.
+     *
+     * @param float $pesoAntenaKg
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setPesoAntenaKg($pesoAntenaKg)
+    {
+        $this->pesoAntenaKg = $pesoAntenaKg;
+
+        return $this;
+    }
+
+    /**
+     * Get pesoAntenaKg.
+     *
+     * @return float
+     */
+    public function getPesoAntenaKg()
+    {
+        return $this->pesoAntenaKg;
+    }
+
+    /**
+     * Set dimensionMarcoSoporte.
+     *
+     * @param float $dimensionMarcoSoporte
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setDimensionMarcoSoporte($dimensionMarcoSoporte)
+    {
+        $this->dimensionMarcoSoporte = $dimensionMarcoSoporte;
+
+        return $this;
+    }
+
+    /**
+     * Get dimensionMarcoSoporte.
+     *
+     * @return float
+     */
+    public function getDimensionMarcoSoporte()
+    {
+        return $this->dimensionMarcoSoporte;
+    }
+
+    /**
+     * Set instaladaColumnaA.
+     *
+     * @param bool $instaladaColumnaA
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setInstaladaColumnaA($instaladaColumnaA)
+    {
+        $this->instaladaColumnaA = $instaladaColumnaA;
+
+        return $this;
+    }
+
+    /**
+     * Get instaladaColumnaA.
+     *
+     * @return bool
+     */
+    public function getInstaladaColumnaA()
+    {
+        return $this->instaladaColumnaA;
+    }
+
+    /**
+     * Set instaladaColumnaB.
+     *
+     * @param bool $instaladaColumnaB
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setInstaladaColumnaB($instaladaColumnaB)
+    {
+        $this->instaladaColumnaB = $instaladaColumnaB;
+
+        return $this;
+    }
+
+    /**
+     * Get instaladaColumnaB.
+     *
+     * @return bool
+     */
+    public function getInstaladaColumnaB()
+    {
+        return $this->instaladaColumnaB;
+    }
+
+    /**
+     * Set instaladaColumnaC.
+     *
+     * @param bool $instaladaColumnaC
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setInstaladaColumnaC($instaladaColumnaC)
+    {
+        $this->instaladaColumnaC = $instaladaColumnaC;
+
+        return $this;
+    }
+
+    /**
+     * Get instaladaColumnaC.
+     *
+     * @return bool
+     */
+    public function getInstaladaColumnaC()
+    {
+        return $this->instaladaColumnaC;
+    }
+
+    /**
+     * Set instaladaColumnaD.
+     *
+     * @param bool $instaladaColumnaD
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setInstaladaColumnaD($instaladaColumnaD)
+    {
+        $this->instaladaColumnaD = $instaladaColumnaD;
+
+        return $this;
+    }
+
+    /**
+     * Get instaladaColumnaD.
+     *
+     * @return bool
+     */
+    public function getInstaladaColumnaD()
+    {
+        return $this->instaladaColumnaD;
+    }
+
+    /**
+     * Set tipoLineaTransmision.
+     *
+     * @param string $tipoLineaTransmision
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setTipoLineaTransmision($tipoLineaTransmision)
+    {
+        $this->tipoLineaTransmision = $tipoLineaTransmision;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoLineaTransmision.
+     *
+     * @return string
+     */
+    public function getTipoLineaTransmision()
+    {
+        return $this->tipoLineaTransmision;
+    }
+
+    /**
+     * Set diametroParabola.
+     *
+     * @param float $diametroParabola
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setDiametroParabola($diametroParabola)
+    {
+        $this->diametroParabola = $diametroParabola;
+
+        return $this;
+    }
+
+    /**
+     * Get diametroParabola.
+     *
+     * @return float
+     */
+    public function getDiametroParabola()
+    {
+        return $this->diametroParabola;
+    }
+
+    /**
+     * Set largoEjeDireccionalidadOtras.
+     *
+     * @param float $largoEjeDireccionalidadOtras
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setLargoEjeDireccionalidadOtras($largoEjeDireccionalidadOtras)
+    {
+        $this->largoEjeDireccionalidadOtras = $largoEjeDireccionalidadOtras;
+
+        return $this;
+    }
+
+    /**
+     * Get largoEjeDireccionalidadOtras.
+     *
+     * @return float
+     */
+    public function getLargoEjeDireccionalidadOtras()
+    {
+        return $this->largoEjeDireccionalidadOtras;
+    }
+
+    /**
+     * Set proyectoPor.
+     *
+     * @param string $proyectoPor
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setProyectoPor($proyectoPor)
+    {
+        $this->proyectoPor = $proyectoPor;
+
+        return $this;
+    }
+
+    /**
+     * Get proyectoPor.
+     *
+     * @return string
+     */
+    public function getProyectoPor()
+    {
+        return $this->proyectoPor;
+    }
+
+    /**
+     * Set instalacionProyectoPor.
+     *
+     * @param string $instalacionProyectoPor
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setInstalacionProyectoPor($instalacionProyectoPor)
+    {
+        $this->instalacionProyectoPor = $instalacionProyectoPor;
+
+        return $this;
+    }
+
+    /**
+     * Get instalacionProyectoPor.
+     *
+     * @return string
+     */
+    public function getInstalacionProyectoPor()
+    {
+        return $this->instalacionProyectoPor;
+    }
+
+    /**
+     * Set otrasEspecificaciones.
+     *
+     * @param string $otrasEspecificaciones
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setOtrasEspecificaciones($otrasEspecificaciones)
+    {
+        $this->otrasEspecificaciones = $otrasEspecificaciones;
+
+        return $this;
+    }
+
+    /**
+     * Get otrasEspecificaciones.
+     *
+     * @return string
+     */
+    public function getOtrasEspecificaciones()
+    {
+        return $this->otrasEspecificaciones;
+    }
+
+    /**
+     * Set anexo.
+     *
+     * @param \AppBundle\Entity\anexo4_arrendamiento_espacios $anexo
+     *
+     * @return relacion_antenas_a4
+     */
+    public function setAnexo(\AppBundle\Entity\anexo4_arrendamiento_espacios $anexo)
+    {
+        $this->anexo = $anexo;
+
+        return $this;
+    }
+
+    /**
+     * Get anexo.
+     *
+     * @return \AppBundle\Entity\anexo4_arrendamiento_espacios
+     */
+    public function getAnexo()
+    {
+        return $this->anexo;
+    }
+}

@@ -1,0 +1,29 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: siunic_etecsa
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: es
+    secret: 692cd6b4574faf02145126fe2f31c3fdbf88a5fc
+    webapp_host: 127.0.0.1
+    webapp_url: 'http://%webapp_host%'
+    webapp.logo: logo_etecsa.jpg
+    webapp.short_title: SIUNIC
+    webapp.title: 'Sistema Unificado de Cliente Único'
+    sonata_admin.title: 'SIUNIC ETECSA'
+    sonata_admin.short_title: SIUNIC
+    sonata_admin.logo_title: logo_etecsa.jpg
+    sonata_admin.skin: skin-purple
+    sonata_media.cdn.host: /uploads/media
+    sonata_user.google_authenticator.server: app.symfony-sonata-project.com
+    jwt_private_key_path: '%kernel.root_dir%/../app/config/jwt/server.key'
+    jwt_public_key_path: '%kernel.root_dir%/../app/config/jwt/server.crt'
+    jwt_key_pass_phrase: '1234'
+    jwt_token_ttl: 86400

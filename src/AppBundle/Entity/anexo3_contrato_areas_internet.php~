@@ -1,0 +1,126 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * anexo3_contrato_areas_internet
+ *
+ * @ORM\Table(name="anexo3_contrato_areas_internet")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\anexo3_contrato_areas_internetRepository")
+ */
+class anexo3_contrato_areas_internet
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="contrato_areas_internet")
+     * @ORM\JoinColumn(name="id_contrato", referencedColumnName="id", nullable=false)
+     */
+    private $contrato;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NO_telef_bloqueo", type="string", length=50)
+     */
+    private $nOTelefBloqueo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NO_telef_asistencia_usuarios", type="string", length=50)
+     */
+    private $nOTelefAsistenciaUsuarios;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nOTelefBloqueo.
+     *
+     * @param string $nOTelefBloqueo
+     *
+     * @return anexo3_contrato_areas_internet
+     */
+    public function setNOTelefBloqueo($nOTelefBloqueo)
+    {
+        $this->nOTelefBloqueo = $nOTelefBloqueo;
+
+        return $this;
+    }
+
+    /**
+     * Get nOTelefBloqueo.
+     *
+     * @return string
+     */
+    public function getNOTelefBloqueo()
+    {
+        return $this->nOTelefBloqueo;
+    }
+
+    /**
+     * Set nOTelefAsistenciaUsuarios.
+     *
+     * @param string $nOTelefAsistenciaUsuarios
+     *
+     * @return anexo3_contrato_areas_internet
+     */
+    public function setNOTelefAsistenciaUsuarios($nOTelefAsistenciaUsuarios)
+    {
+        $this->nOTelefAsistenciaUsuarios = $nOTelefAsistenciaUsuarios;
+
+        return $this;
+    }
+
+    /**
+     * Get nOTelefAsistenciaUsuarios.
+     *
+     * @return string
+     */
+    public function getNOTelefAsistenciaUsuarios()
+    {
+        return $this->nOTelefAsistenciaUsuarios;
+    }
+
+    /**
+     * Set contrato.
+     *
+     * @param \AppBundle\Entity\contrato_areas_internet $contrato
+     *
+     * @return anexo3_contrato_areas_internet
+     */
+    public function setContrato(\AppBundle\Entity\contrato_areas_internet $contrato)
+    {
+        $this->contrato = $contrato;
+
+        return $this;
+    }
+
+    /**
+     * Get contrato.
+     *
+     * @return \AppBundle\Entity\contrato_areas_internet
+     */
+    public function getContrato()
+    {
+        return $this->contrato;
+    }
+}

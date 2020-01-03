@@ -1,0 +1,470 @@
+services:
+    app.admin.empresa:
+        class: AppBundle\Admin\EmpresaAdmin
+        arguments: [~, AppBundle\Entity\Empresa, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: general, label: Empresa }
+        public: true
+
+    app.admin.organismos:
+        class: AppBundle\Admin\OrganismosAdmin
+        arguments: [~, AppBundle\Entity\Organismos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: general, label: Organismos }
+        public: true
+
+    app.admin.personas:
+        class: AppBundle\Admin\PersonasAdmin
+        arguments: [~, AppBundle\Entity\Personas, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: general, label: Personas }
+        public: true
+
+    app.admin.anexo1.contrato.areas.internet:
+        class: AppBundle\Admin\anexo1_contrato_areas_internetAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_areas_internet, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_areas, label: Tarifas y Distribución de Ingresos. }
+        public: true
+
+    app.admin.anexo1.contrato.arrendamiento.espacios:
+        class: AppBundle\Admin\anexo1_contrato_arrendamiento_espaciosAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_arrendamiento_espacios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Anexo 1 Contrato Arrendamiento de Espacios }
+        public: true
+
+    app.admin.anexo1.contrato.arrendamiento.pizarras.privadas.pbx:
+        class: AppBundle\Admin\anexo1_contrato_arrendamiento_pizarras_privadas_pbxAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_arrendamiento_pizarras_privadas_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_pizarra, label: Anexo 1 Contrato Arrendamiento Pizarras }
+        public: true
+
+    app.admin.anexo1.contrato.arrendamiento.redes:
+        class: AppBundle\Admin\anexo1_contrato_arrendamiento_redesAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_arrendamiento_redes, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_redes, label: Tarifas para el arrendamiento de Redes }
+        public: true
+
+    app.admin.anexo1.contrato.compra.venta:
+        class: AppBundle\Admin\anexo1_contrato_compra_ventaAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_compra_venta, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta, label: Descripción de los productos }
+        public: true
+
+    app.admin.anexo1.contrato.compra.venta.pizarra:
+        class: AppBundle\Admin\anexo1_contrato_compra_venta_pizarraAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_compra_venta_pizarra, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta_pizarra, label: Anexo 1 Contrato Compra Venta Pizarra }
+        public: true
+
+    app.admin.anexo1.contrato.contactos.telefonicos:
+        class: AppBundle\Admin\anexo1_contrato_contactos_telefonicosAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_contactos_telefonicos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios_ct, label: Especificaciones del Servicio }
+        public: true
+
+    app.admin.anexo1.contrato.mantenimiento.pizarra.pbx:
+        class: AppBundle\Admin\anexo1_contrato_mantenimiento_pizarra_pbxAdmin
+        arguments: [~, AppBundle\Entity\anexo1_contrato_mantenimiento_pizarra_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Anexo 1 Contrato Mantenimiento Pizarras }
+        public: true
+
+    app.admin.anexo2.contrato.areas.internet:
+        class: AppBundle\Admin\anexo2_contrato_areas_internetAdmin
+        arguments: [~, AppBundle\Entity\anexo2_contrato_areas_internet, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_areas, label: Aportes de las Partes }
+        public: true
+
+    app.admin.anexo2.contrato.arrendamiento.redes:
+        class: AppBundle\Admin\anexo2_contrato_arrendamiento_redesAdmin
+        arguments: [~, AppBundle\Entity\anexo2_contrato_arrendamiento_redes, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_redes, label: Relación de tramos de Redes  }
+        public: true
+
+    app.admin.anexo2.contrato.instalacion.pizarra.pbx:
+        class: AppBundle\Admin\anexo2_contrato_instalacion_pizarra_pbxAdmin
+        arguments: [~, AppBundle\Entity\anexo2_contrato_instalacion_pizarra_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_instalacion_pizarra, label: Equipos Contratados }
+        public: true
+
+    app.admin.anexo2.contrato.recarga.por.pos:
+        class: AppBundle\Admin\anexo2_contrato_recarga_por_posAdmin
+        arguments: [~, AppBundle\Entity\anexo2_contrato_recarga_por_pos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_recarga_pos, label: Puntos de Ventas del Cliente }
+        public: true
+    app.admin.datos.cuentas.bancarias.etecsa:
+        class: AppBundle\Admin\datos_cuentas_bancarias_etecsaAdmin
+        arguments: [~, AppBundle\Entity\datos_cuentas_bancarias_etecsa, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_agencia, label: Datos de las Cuentas Bancarias de ETECSA }
+        public: true
+    app.admin.anexo4.contrato.agencia:
+        class: AppBundle\Admin\anexo4_contrato_agenciaAdmin
+        arguments: [~, AppBundle\Entity\anexo4_contrato_agencia, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_agencia, label: Puntos de atencion al agente }
+        public: true
+    app.admin.anexo4.arrendamiento.espacios:
+        class: AppBundle\Admin\anexo4_arrendamiento_espaciosAdmin
+        arguments: [~, AppBundle\Entity\anexo4_arrendamiento_espacios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Anexo 4 Arrendamiento Espacios }
+        public: true
+
+    app.admin.anexo4.contrato.compra.venta:
+        class: AppBundle\Admin\anexo4_contrato_compra_ventaAdmin
+        arguments: [~, AppBundle\Entity\anexo4_contrato_compra_venta, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta, label: Puntos de Comercialización por ETECSA }
+        public: true
+
+    app.admin.anexo4.contrato.recarga.por.pos:
+        class: AppBundle\Admin\anexo4_contrato_recarga_por_posAdmin
+        arguments: [~, AppBundle\Entity\anexo4_contrato_recarga_por_pos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_recarga_pos, label: Acta de Entrega }
+        public: true
+    app.admin.anexo5.contrato.agencia:
+        class: AppBundle\Admin\anexo5_contrato_agenciaAdmin
+        arguments: [~, AppBundle\Entity\anexo5_contrato_agencia, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_agencia, label: Puntos de comercialización del agente }
+        public: true
+    app.admin.anexo5.arrendaminto.espacios:
+        class: AppBundle\Admin\anexo5_arrendaminto_espaciosAdmin
+        arguments: [~, AppBundle\Entity\anexo5_arrendaminto_espacios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Anexo 5 Arrendamiento Espacios }
+        public: true
+
+    app.admin.anexo5.contrato.areas.internet:
+        class: AppBundle\Admin\anexo5_contrato_areas_internetAdmin
+        arguments: [~, AppBundle\Entity\anexo5_contrato_areas_internet, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_areas, label: Punto de comercialización.  }
+        public: true
+
+    app.admin.anexocps.conexion.centrales.telefonicas:
+        class: AppBundle\Admin\anexocps_conexion_centrales_telefonicasAdmin
+        arguments: [~, AppBundle\Entity\anexocps_conexion_centrales_telefonicas, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios, label: Conexion Centrales Telefonicos}
+        public: true
+
+    app.admin.anexocps.levantamiento.redes.tecnicas:
+        class: AppBundle\Admin\anexocps_levantamiento_redes_tecnicasAdmin
+        arguments: [~, AppBundle\Entity\anexocps_levantamiento_redes_tecnicas, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios, label: Levantamiento Redes Tecnicas }
+        public: true
+
+    app.admin.anexocps.servicios.terceros:
+        class: AppBundle\Admin\anexocps_servicios_tercerosAdmin
+        arguments: [~, AppBundle\Entity\anexocps_servicios_terceros, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios, label: Servicios a Terceros }
+        public: true
+
+    app.admin.contrato.agencia.persona.juridica:
+        class: AppBundle\Admin\contrato_agencia_persona_juridicaAdmin
+        arguments: [~, AppBundle\Entity\contrato_agencia_persona_juridica, AppBundle\Controller\ContratoAgenciaController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_agencia, label: Contratos Agencia Persona Juridica }
+        public: true
+
+    app.admin.contrato.areas.internet:
+        class: AppBundle\Admin\contrato_areas_internetAdmin
+        arguments: [~, AppBundle\Entity\contrato_areas_internet, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_areas, label: Contratos Areas Internet }
+        public: true
+
+    app.admin.contrato.arrendamiento.espacios:
+        class: AppBundle\Admin\contrato_arrendamiento_espaciosAdmin
+        arguments: [~, AppBundle\Entity\contrato_arrendamiento_espacios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Contratos Arrendamiento Espacios }
+        public: true
+
+    app.admin.contrato.arrendamiento.pizarra.privada.pbx:
+        class: AppBundle\Admin\contrato_arrendamiento_pizarra_privada_pbxAdmin
+        arguments: [~, AppBundle\Entity\contrato_arrendamiento_pizarra_privada_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_pizarra, label: Contratos Arrendamiento Pizarras Privadas }
+        public: true
+
+    app.admin.contrato.arrendamiento.redes:
+        class: AppBundle\Admin\contrato_arrendamiento_redesAdmin
+        arguments: [~, AppBundle\Entity\contrato_arrendamiento_redes, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_redes, label: Contratos Arrendamiento de Redes }
+        public: true
+
+    app.admin.contrato.compra.venta:
+        class: AppBundle\Admin\contrato_compra_ventaAdmin
+        arguments: [~, AppBundle\Entity\contrato_compra_venta, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta, label: Contratos Compra Venta }
+        public: true
+
+    app.admin.contrato.instalacion.pizarra.pbx:
+        class: AppBundle\Admin\contrato_instalacion_pizarra_pbxAdmin
+        arguments: [~, AppBundle\Entity\contrato_instalacion_pizarra_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_instalacion_pizarra, label: Contratos Instalacion Pizarra }
+        public: true
+
+    app.admin.contrato.mantenimiento.pizarra.pbx:
+        class: AppBundle\Admin\contrato_mantenimiento_pizarra_pbxAdmin
+        arguments: [~, AppBundle\Entity\contrato_mantenimiento_pizarra_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Contratos Mantenimiento Pizarra }
+        public: true
+
+    app.admin.contrato.prestacion.servicios:
+        class: AppBundle\Admin\contrato_prestacion_serviciosAdmin
+        arguments: [~, AppBundle\Entity\contrato_prestacion_servicios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios, label: Contratos Prestacion Servicios }
+        public: true
+
+    app.admin.contrato.recarga.por.pos:
+        class: AppBundle\Admin\contrato_recarga_por_posAdmin
+        arguments: [~, AppBundle\Entity\contrato_recarga_por_pos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_recarga_pos, label: Contratos Recarga por POS }
+        public: true
+
+    app.admin.descripcion.productos.servicios:
+        class: AppBundle\Admin\descripcion_productos_serviciosAdmin
+        arguments: [~, AppBundle\Entity\descripcion_productos_servicios, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Descripcion Productos y Servicios }
+        public: true
+
+    app.admin.facilidades.del.equipo:
+        class: AppBundle\Admin\facilidades_del_equipoAdmin
+        arguments: [~, AppBundle\Entity\facilidades_del_equipo, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Facilidades del Equipo }
+        public: true
+
+    app.admin.grupos.electrogenos:
+        class: AppBundle\Admin\grupos_electrogenosAdmin
+        arguments: [~, AppBundle\Entity\grupos_electrogenos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Grupos Electrógenos }
+        public: true
+
+    app.admin.locales:
+        class: AppBundle\Admin\localesAdmin
+        arguments: [~, AppBundle\Entity\locales, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: locales }
+        public: true
+
+    app.admin.mantenimiento.correctivo:
+        class: AppBundle\Admin\mantenimiento_correctivoAdmin
+        arguments: [~, AppBundle\Entity\mantenimiento_correctivo, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Mantenimiento Correctivo }
+        public: true
+
+    app.admin.mantenimiento.preventivo:
+        class: AppBundle\Admin\mantenimiento_preventivoAdmin
+        arguments: [~, AppBundle\Entity\mantenimiento_preventivo, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Mantenimiento Preventivo }
+        public: true
+
+    app.admin.pizarra.pbx:
+        class: AppBundle\Admin\pizarra_pbxAdmin
+        arguments: [~, AppBundle\Entity\pizarra_pbx, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: general, label: Pizarras PBX }
+        public: true
+
+    app.admin.protecciones.tierra:
+        class: AppBundle\Admin\protecciones_tierraAdmin
+        arguments: [~, AppBundle\Entity\protecciones_tierra, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Protecciones_tierra }
+        public: true
+
+    app.admin.relacion.antenas.a4:
+        class: AppBundle\Admin\relacion_antenas_a4Admin
+        arguments: [~, AppBundle\Entity\relacion_antenas_a4, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Antenas }
+        public: true
+
+    app.admin.relacion.bastidores:
+        class: AppBundle\Admin\relacion_bastidoresAdmin
+        arguments: [~, AppBundle\Entity\relacion_bastidores, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Bastidores }
+        public: true
+    app.admin.relacion.equipos:
+        class: AppBundle\Admin\relacion_equiposAdmin
+        arguments: [~, AppBundle\Entity\relacion_equipos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Equipos }
+        public: true
+
+    app.admin.relacion.iluminacion.tomacorriente:
+        class: AppBundle\Admin\relacion_iluminacion_tomacorrienteAdmin
+        arguments: [~, AppBundle\Entity\relacion_iluminacion_tomacorriente, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: relacion_iluminacion_tomacorriente }
+        public: true
+
+    app.admin.relacion.mastiles.a4:
+        class: AppBundle\Admin\relacion_mastiles_a4Admin
+        arguments: [~, AppBundle\Entity\relacion_mastiles_a4, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Mástiles }
+        public: true
+
+    app.admin.relacion.terminaciones.bastidor:
+        class: AppBundle\Admin\relacion_terminaciones_bastidorAdmin
+        arguments: [~, AppBundle\Entity\relacion_terminaciones_bastidor, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: relacion_terminaciones_bastidor }
+        public: true
+
+    app.admin.relacion.torres.a4:
+        class: AppBundle\Admin\relacion_torres_a4Admin
+        arguments: [~, AppBundle\Entity\relacion_torres_a4, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Torres }
+        public: true
+
+    app.admin.relacion.vias:
+        class: AppBundle\Admin\relacion_viasAdmin
+        arguments: [~, AppBundle\Entity\relacion_vias, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Vías }
+        public: true
+
+    app.admin.sistema.corriente.directa:
+        class: AppBundle\Admin\sistema_corriente_directaAdmin
+        arguments: [~, AppBundle\Entity\sistema_corriente_directa, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Sistemas de Corriente Directa}
+        public: true
+
+    app.admin.sistema.iluminacion.a5:
+        class: AppBundle\Admin\sistema_iluminacion_a5Admin
+        arguments: [~, AppBundle\Entity\sistema_iluminacion_a5, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Sistemas de Iluminación }
+        public: true
+
+    app.admin.sistemas.corriente.alterna:
+        class: AppBundle\Admin\sistemas_corriente_alternaAdmin
+        arguments: [~, AppBundle\Entity\sistemas_corriente_alterna, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Sistemas de Corriente Alterna }
+        public: true
+
+    app.admin.tarifas.espacios.arrendados:
+        class: AppBundle\Admin\tarifas_espacios_arrendadosAdmin
+        arguments: [~, AppBundle\Entity\tarifas_espacios_arrendados, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Tarifas de Espacios Arrendados }
+        public: true
+
+    app.admin.terminaciones:
+        class: AppBundle\Admin\terminacionesAdmin
+        arguments: [~, AppBundle\Entity\terminaciones, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Terminaciones }
+        public: true
+
+    app.admin.tipos.de.mantenimientos:
+        class: AppBundle\Admin\tipos_de_mantenimientosAdmin
+        arguments: [~, AppBundle\Entity\tipos_de_mantenimientos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Tipos de Mantenimientos }
+        public: true
+
+    app.admin.tipos.distancias.arrendadas:
+        class: AppBundle\Admin\tipos_distancias_arrendadasAdmin
+        arguments: [~, AppBundle\Entity\tipos_distancias_arrendadas, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_redes, label: Tipos de distancias arrendadas }
+        public: true
+
+    app.admin.tipos.mantenimientos.correctivos:
+        class: AppBundle\Admin\tipos_mantenimientos_correctivosAdmin
+        arguments: [~, AppBundle\Entity\tipos_mantenimientos_correctivos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_mantenimiento_pizarra, label: Tipos Mantenimientos Correctivos }
+        public: true
+
+    app.admin.tomacorrientes:
+        class: AppBundle\Admin\tomacorrientesAdmin
+        arguments: [~, AppBundle\Entity\tomacorrientes, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_arrendamiento_espacios, label: Tomacorrientes }
+        public: true
+
+    app.admin.datos.cuentas.bancarias.etecsa:
+        class: AppBundle\Admin\datos_cuentas_bancarias_etecsaAdmin
+        arguments: [~, AppBundle\Entity\datos_cuentas_bancarias_etecsa, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: datos_cuentas_bancarias_etecsa }
+        public: true
+
+    app.admin.descripcion.productos.contratados:
+        class: AppBundle\Admin\descripcion_productos_contratadosAdmin
+        arguments: [~, AppBundle\Entity\descripcion_productos_contratados, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta_pizarra, label: Descripción Productos Contratados }
+        public: true
+
+    app.admin.contrato.contactos.telefonicos:
+        class: AppBundle\Admin\contrato_contactos_telefonicosAdmin
+        arguments: [~, AppBundle\Entity\contrato_contactos_telefonicos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios_ct, label: Contratos Contactos Telefonicos }
+        public: true
+
+    app.admin.equipamiento.gsm.pos:
+        class: AppBundle\Admin\equipamiento_gsm_posAdmin
+        arguments: [~, AppBundle\Entity\equipamiento_gsm_pos, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_recarga_pos, label: Equipamiento GSM }
+        public: true
+
+    app.admin.tarjetas.sim:
+        class: AppBundle\Admin\tarjetas_simAdmin
+        arguments: [~, AppBundle\Entity\tarjetas_sim, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_recarga_pos, label: Tarjetas SIM }
+        public: true
+
+    app.admin.tarifas.conexion.pizarras:
+        class: AppBundle\Admin\tarifas_conexion_pizarrasAdmin
+        arguments: [~, AppBundle\Entity\tarifas_conexion_pizarras, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_prestacion_servicios, label: Tarifas Conexion Pizarras }
+        public: true
+
+    app.admin.contrato.comp.vent.pizarra:
+        class: AppBundle\Admin\contrato_comp_vent_pizarraAdmin
+        arguments: [~, AppBundle\Entity\contrato_comp_vent_pizarra, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: contrato_compra_venta_pizarra, label: Contratos Compra Venta de Pizarras }
+        public: true

@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Personas
+ *
+ * @ORM\Table(name="personas")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PersonasRepository")
+ */
+class Personas
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Empresa", cascade={"all"})
+     * @ORM\JoinColumn(name="id_empresa", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank(message="No debe estar vacío")
+     */
+    private $empresa;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+        
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cargo", type="string", length=255)
+     */
+    private $cargo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=255)
+     */
+    private $telefono;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="correo_electronico", type="string", length=255, nullable=true)
+     */
+    private $correoElectronico;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=255)
+     */
+    private $direccion;
+}

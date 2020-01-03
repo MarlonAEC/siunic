@@ -1,0 +1,11 @@
+{# empty Twig template #}
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+
+
+{% block field %}
+    <a  target="_blank" class="btn btn-primary btn-sm" href="{{ admin.generateObjectUrl('imprimir',object)}}" >
+        <i class="fa fa-print"></i>
+    </a>
+    
+{% endblock %}

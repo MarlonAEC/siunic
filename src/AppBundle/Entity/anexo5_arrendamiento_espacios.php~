@@ -1,0 +1,127 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * anexo5_arrendamiento_espacios
+ *
+ * @ORM\Table(name="anexo5_arrendamiento_espacios")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\anexo5_arrendamiento_espaciosRepository")
+ */
+class anexo5_arrendamiento_espacios
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="otras_especificaciones_interes", type="text")
+     */
+    private $otrasEspecificacionesInteres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="proyecto_a_cargo", type="string", length=255)
+     */
+    private $proyectoACargo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ejecucion_proyecto_a_cargo", type="string", length=255)
+     */
+    private $ejecucionProyectoACargo;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set otrasEspecificacionesInteres.
+     *
+     * @param string $otrasEspecificacionesInteres
+     *
+     * @return anexo5_arrendamiento_espacios
+     */
+    public function setOtrasEspecificacionesInteres($otrasEspecificacionesInteres)
+    {
+        $this->otrasEspecificacionesInteres = $otrasEspecificacionesInteres;
+
+        return $this;
+    }
+
+    /**
+     * Get otrasEspecificacionesInteres.
+     *
+     * @return string
+     */
+    public function getOtrasEspecificacionesInteres()
+    {
+        return $this->otrasEspecificacionesInteres;
+    }
+
+    /**
+     * Set proyectoACargo.
+     *
+     * @param string $proyectoACargo
+     *
+     * @return anexo5_arrendamiento_espacios
+     */
+    public function setProyectoACargo($proyectoACargo)
+    {
+        $this->proyectoACargo = $proyectoACargo;
+
+        return $this;
+    }
+
+    /**
+     * Get proyectoACargo.
+     *
+     * @return string
+     */
+    public function getProyectoACargo()
+    {
+        return $this->proyectoACargo;
+    }
+
+    /**
+     * Set ejecucionProyectoACargo.
+     *
+     * @param string $ejecucionProyectoACargo
+     *
+     * @return anexo5_arrendamiento_espacios
+     */
+    public function setEjecucionProyectoACargo($ejecucionProyectoACargo)
+    {
+        $this->ejecucionProyectoACargo = $ejecucionProyectoACargo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecucionProyectoACargo.
+     *
+     * @return string
+     */
+    public function getEjecucionProyectoACargo()
+    {
+        return $this->ejecucionProyectoACargo;
+    }
+}

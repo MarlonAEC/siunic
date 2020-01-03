@@ -1,0 +1,157 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * anexo5_arrendaminto_espacios
+ *
+ * @ORM\Table(name="anexo5_arrendaminto_espacios")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\anexo5_arrendaminto_espaciosRepository")
+ */
+class anexo5_arrendaminto_espacios
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="contrato_arrendamiento_espacios")
+     * @ORM\JoinColumn(name="id_contrato", referencedColumnName="id", nullable=false)
+     */
+    private $contrato;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="otras_especificaciones", type="text")
+     */
+    private $otrasEspecificaciones;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="proyecto_a_cargo", type="string", length=255)
+     */
+    private $proyectoACargo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ejecucion_proyecto_a_cargo", type="string", length=255)
+     */
+    private $ejecucionProyectoACargo;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set otrasEspecificaciones.
+     *
+     * @param string $otrasEspecificaciones
+     *
+     * @return anexo5_arrendaminto_espacios
+     */
+    public function setOtrasEspecificaciones($otrasEspecificaciones)
+    {
+        $this->otrasEspecificaciones = $otrasEspecificaciones;
+
+        return $this;
+    }
+
+    /**
+     * Get otrasEspecificaciones.
+     *
+     * @return string
+     */
+    public function getOtrasEspecificaciones()
+    {
+        return $this->otrasEspecificaciones;
+    }
+
+    /**
+     * Set proyectoACargo.
+     *
+     * @param string $proyectoACargo
+     *
+     * @return anexo5_arrendaminto_espacios
+     */
+    public function setProyectoACargo($proyectoACargo)
+    {
+        $this->proyectoACargo = $proyectoACargo;
+
+        return $this;
+    }
+
+    /**
+     * Get proyectoACargo.
+     *
+     * @return string
+     */
+    public function getProyectoACargo()
+    {
+        return $this->proyectoACargo;
+    }
+
+    /**
+     * Set ejecucionProyectoACargo.
+     *
+     * @param string $ejecucionProyectoACargo
+     *
+     * @return anexo5_arrendaminto_espacios
+     */
+    public function setEjecucionProyectoACargo($ejecucionProyectoACargo)
+    {
+        $this->ejecucionProyectoACargo = $ejecucionProyectoACargo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecucionProyectoACargo.
+     *
+     * @return string
+     */
+    public function getEjecucionProyectoACargo()
+    {
+        return $this->ejecucionProyectoACargo;
+    }
+
+    /**
+     * Set contrato.
+     *
+     * @param \AppBundle\Entity\contrato_arrendamiento_espacios $contrato
+     *
+     * @return anexo5_arrendaminto_espacios
+     */
+    public function setContrato(\AppBundle\Entity\contrato_arrendamiento_espacios $contrato)
+    {
+        $this->contrato = $contrato;
+
+        return $this;
+    }
+
+    /**
+     * Get contrato.
+     *
+     * @return \AppBundle\Entity\contrato_arrendamiento_espacios
+     */
+    public function getContrato()
+    {
+        return $this->contrato;
+    }
+}

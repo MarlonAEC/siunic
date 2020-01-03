@@ -1,0 +1,217 @@
+# related to app/config/sonata/sonata_admin.yml
+imports:
+    - { resource: 'parameters.yml'}
+    - { resource: 'security.yml'}
+
+twig:
+    globals:
+        app_kernel_root_dir: "%kernel.root_dir%"
+        app_kernel_web_dir: "%kernel.root_dir%/../web"
+        webapp_logo: "%webapp.logo%"
+        webapp_short_title: "%webapp.short_title%"
+        webapp_title: "%webapp.title%"
+
+gregwar_captcha:
+    width: 200
+    height: 50
+    length: 4
+
+fos_user:
+    from_email:
+        address:        no-reply@symfony.com
+        sender_name:    webmaster
+    registration:
+        confirmation:
+            #template:   FOSUserBundle:Registration:email.txt.twig
+            from_email:
+                address:        no-reply@symfony.com
+                sender_name:    webmaster
+    resetting:
+        email:
+            #template:   FOSUserBundle:Resetting:email.txt.twig
+            from_email:
+                address:        no-reply@symfony.com
+                sender_name:    webmaster
+        
+sonata_admin:
+
+    templates:
+        layout:             AppBundle:Admin:standard_layout.html.twig
+        base_list_field:    AppBundle:Admin:CRUD/base_list_field.html.twig
+        dashboard:          AppBundle:Admin:dashboard.html.twig
+
+    dashboard:
+
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [administration,contrato_agencia,contrato_recarga_pos,contrato_prestacion_servicios,contrato_compra_venta,contrato_arrendamiento_redes,contrato_instalacion_pizarra,contrato_compra_venta_pizarra,contrato_mantenimiento_pizarra]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [admin, user,contrato_prestacion_servicios_ct,contrato_areas,contrato_arrendamiento_pizarra]
+
+        groups:
+
+            administration:
+                label:           sonata_administration
+                label_catalogue: SonataAdminBundle
+                icon: '<i class="glyphicon glyphicon-user"></i>'
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
+                    - data_dog_audit.admin.audit_log
+            admin:
+                label: admin.dashboard.menu.admin.label
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_ADMIN ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            general:
+                label: Datos Generales
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_ADMIN, ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_agencia:
+                label: Contratos Agencia Persona Jurídica
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_areas:
+                label: Contratos Áreas de Internet
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_arrendamiento_pizarra:
+                label: Contratos Arrendamiento de Pizarras
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_arrendamiento_redes:
+                label: Contratos Arrendamiento de Redes
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_compra_venta_pizarra:
+                label: Contratos Compra Venta Pizarras
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_compra_venta:
+                label: Contratos Compra Venta
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_instalacion_pizarra:
+                label: Contratos Instalacion de Pizarras
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_mantenimiento_pizarra:
+                label: Contratos Mantenimiento de Pizarras
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_prestacion_servicios_ct:
+                label: Contratos Prestacion de Servicios CT
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_prestacion_servicios:
+                label: Contratos Prestacion de Servicios
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            contrato_recarga_pos:
+                label: Contratos Recarga por POS
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+           #- contrato_arrendamiento_espacios:
+             #-   label: Contratos Arrendamiento de Espacios
+             #-   label_catalogue: AppBundle
+             #-   icon: '<i class="fa fa-list-alt"></i>'
+             #-   roles: [ ROLE_USER ]
+             #-   items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+            user:
+                label: admin.dashboard.menu.user.label
+                label_catalogue: AppBundle
+                icon: '<i class="fa fa-list-alt"></i>'
+                roles: [ ROLE_USER ]
+                items:
+                    #- sonata.user.admin.user
+                    #- sonata.user.admin.group
+                    #- data_dog_audit.admin.audit_log
+                    #- app.admin.entity
+

@@ -1,0 +1,190 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * mantenimiento_correctivo
+ *
+ * @ORM\Table(name="mantenimiento_correctivo")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\mantenimiento_correctivoRepository")
+ */
+class mantenimiento_correctivo
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="anexo1_contrato_mantenimiento_pizarra_pbx")
+     * @ORM\JoinColumn(name="id_anexo", referencedColumnName="id", nullable=false)
+     */
+    private $anexo;
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="tipos_mantenimientos_correctivos")
+     * @ORM\JoinColumn(name="id_tipo_mantenimiento_correctivo", referencedColumnName="id", nullable=false)
+     */
+    private $tipoMantenimientoCorrectivo;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="telefonos_regulares", type="boolean")
+     */
+    
+    private $telefonosRegulares;
+
+    /**
+     * @var bool|null
+     *
+     * @ORM\Column(name="equipos_alimentacion", type="boolean", nullable=true)
+     */
+    private $equiposAlimentacion;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="distribucion_interior", type="boolean")
+     */
+    private $distribucionInterior;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set telefonosRegulares.
+     *
+     * @param bool $telefonosRegulares
+     *
+     * @return mantenimiento_correctivo
+     */
+    public function setTelefonosRegulares($telefonosRegulares)
+    {
+        $this->telefonosRegulares = $telefonosRegulares;
+
+        return $this;
+    }
+
+    /**
+     * Get telefonosRegulares.
+     *
+     * @return bool
+     */
+    public function getTelefonosRegulares()
+    {
+        return $this->telefonosRegulares;
+    }
+
+    /**
+     * Set equiposAlimentacion.
+     *
+     * @param bool|null $equiposAlimentacion
+     *
+     * @return mantenimiento_correctivo
+     */
+    public function setEquiposAlimentacion($equiposAlimentacion = null)
+    {
+        $this->equiposAlimentacion = $equiposAlimentacion;
+
+        return $this;
+    }
+
+    /**
+     * Get equiposAlimentacion.
+     *
+     * @return bool|null
+     */
+    public function getEquiposAlimentacion()
+    {
+        return $this->equiposAlimentacion;
+    }
+
+    /**
+     * Set distribucionInterior.
+     *
+     * @param bool $distribucionInterior
+     *
+     * @return mantenimiento_correctivo
+     */
+    public function setDistribucionInterior($distribucionInterior)
+    {
+        $this->distribucionInterior = $distribucionInterior;
+
+        return $this;
+    }
+
+    /**
+     * Get distribucionInterior.
+     *
+     * @return bool
+     */
+    public function getDistribucionInterior()
+    {
+        return $this->distribucionInterior;
+    }
+
+    /**
+     * Set anexo.
+     *
+     * @param \AppBundle\Entity\anexo1_contrato_mantenimiento_pizarra_pbx $anexo
+     *
+     * @return mantenimiento_correctivo
+     */
+    public function setAnexo(\AppBundle\Entity\anexo1_contrato_mantenimiento_pizarra_pbx $anexo)
+    {
+        $this->anexo = $anexo;
+
+        return $this;
+    }
+
+    /**
+     * Get anexo.
+     *
+     * @return \AppBundle\Entity\anexo1_contrato_mantenimiento_pizarra_pbx
+     */
+    public function getAnexo()
+    {
+        return $this->anexo;
+    }
+
+    /**
+     * Set tipoMantenimientoCorrectivo.
+     *
+     * @param \AppBundle\Entity\tipos_mantenimientos_correctivos $tipoMantenimientoCorrectivo
+     *
+     * @return mantenimiento_correctivo
+     */
+    public function setTipoMantenimientoCorrectivo(\AppBundle\Entity\tipos_mantenimientos_correctivos $tipoMantenimientoCorrectivo)
+    {
+        $this->tipoMantenimientoCorrectivo = $tipoMantenimientoCorrectivo;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoMantenimientoCorrectivo.
+     *
+     * @return \AppBundle\Entity\tipos_mantenimientos_correctivos
+     */
+    public function getTipoMantenimientoCorrectivo()
+    {
+        return $this->tipoMantenimientoCorrectivo;
+    }
+}

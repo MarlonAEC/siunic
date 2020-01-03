@@ -1,0 +1,164 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Empresa
+ *
+ * @ORM\Table(name="empresa")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EmpresaRepository")
+ * 
+ */
+class Empresa
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Organismos")
+     * @ORM\JoinColumn(name="id_organismo", referencedColumnName="id", nullable=false)
+     */
+    private $organismo;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Personas", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $personas;
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_agencia_persona_juridica", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoAgencia;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_areas_internet", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoAreas;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_arrendamiento_pizarra_privada_pbx", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contrato_arrendamiento_pizarra;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_arrendamiento_redes", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoArrendamientoRedes;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_compra_venta", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoCompraVenta;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_comp_vent_pizarra", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoCompraVentaPizarra;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_instalacion_pizarra_pbx", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoInstalacionPizarra;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_mantenimiento_pizarra_pbx", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoMantenimientoPizarra;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_prestacion_servicios", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoPrestacionServicios;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_contactos_telefonicos", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoPrestacionServiciosCT;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="contrato_recarga_por_pos", mappedBy="empresa", cascade={"all"}, orphanRemoval=true)
+     */
+    private $contratoRecargaPOS;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo_REUP", type="string", length=50, unique=true)
+     */
+    private $codigoREUP;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_oficial", type="string", length=255)
+     */
+    private $nombreOficial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_abreviado", type="string", length=50)
+     */
+    private $nombreAbreviado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="domicilio", type="string", length=255)
+     */
+    private $domicilio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="actividad_economica", type="string", length=255)
+     */
+    private $actividadEconomica;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correo_electronico", type="string", length=255)
+     */
+    private $correoElectronico;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="sitio_web", type="string", length=255, nullable=true)
+     */
+    private $sitioWeb;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="observaciones", type="string", length=255, nullable=true)
+     */
+    private $observaciones;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NO_cuenta_bancaria_MLC", type="string", length=255)
+     */
+    private $nOCuentaBancariaMLC;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NO_cuenta_bancaria_MN", type="string", length=255)
+     */
+    private $nOCuentaBancariaMN;   
+    
+    public function __toString() {
+        return $this->getId() ? $this->getNombreOficial() : '';
+    }
+}
